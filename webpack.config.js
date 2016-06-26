@@ -1,25 +1,25 @@
-const path = require('path');
-const webpack = require('webpack');
+var webpack = require('webpack');
 
 module.exports = {
+    devtool: 'eval',
     entry: [
-        'webpack/hot/only-dev-server',
+        'webpack-hot-middleware/client',
         './main.js'
     ],
+    watch: true,
+    cache: true,
+    debug: true,
     output: {path: __dirname, filename: 'bundle.js'},
-    module: {
-        loaders: [
-            {
-                test: /.js?$/,
-                loader: 'babel-loader',
-                exclude: /node_modules/,
-                query: {
-                    presets: ['es2015', 'react']
-                }
-            }
-        ]
-    },
     plugins: [
+        new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
-    ]
+        new webpack.NoErrorsPlugin()
+    ],
+    module: {
+        loaders: [{
+            test: /.js?$/,
+            loaders: ['babel-loader'],
+            exclude: /node_modules/
+        }]
+    },
 };

@@ -1,25 +1,28 @@
 {
-  "name": "team-blog",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "babel-core": "^6.10.4",
-    "babel-loader": "^6.2.4",
-    "babel-preset-es2015": "^6.9.0",
-    "babel-preset-react": "^6.5.0",
-    "browser-sync": "^2.13.0",
-    "webpack": "^1.13.1",
-    "webpack-dev-middleware": "^1.6.1",
-    "webpack-hot-middleware": "^2.10.0"
-  },
-  "dependencies": {
-    "react": "^15.1.0",
-    "react-dom": "^15.1.0"
-  },
-  "scripts": {
-    "start": "node run"
-  }
+    "name": "team-blog",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "babel-core": "^6.10.4",
+        "babel-loader": "^6.2.4",
+        "babel-plugin-react-transform": "^2.0.2",
+        "babel-preset-es2015": "^6.9.0",
+        "babel-preset-react": "^6.5.0",
+        "react-hot-loader": "^1.3.0",
+        "react-transform-hmr": "^1.0.4",
+        "webpack": "^1.13.1",
+        "webpack-dev-middleware": "^1.6.1",
+        "webpack-dev-server": "^1.14.1",
+        "webpack-hot-middleware": "^2.10.0"
+    },
+    "dependencies": {
+        "react": "^15.1.0",
+        "react-dom": "^15.1.0"
+    },
+    "scripts": {
+        "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --config webpack.config.js --hot --progress --inline"
+    }
 }
